@@ -308,3 +308,30 @@ textarea:focus {
   border-top: 1px solid var(--border);
   margin: 14px 0;
 }
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+  color: #052e16;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.user-name {
+  font-weight: 700;
+  color: var(--text);
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

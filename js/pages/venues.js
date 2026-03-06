@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const qInput = document.getElementById("q");
   const citySelect = document.getElementById("city");
 
-  // Lấy query từ URL (từ searchbar ở index.html)
   const params = new URLSearchParams(window.location.search);
   qInput.value = params.get("q") || "";
   citySelect.value = params.get("city") || "";
@@ -20,8 +19,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       " " +
       venue.location.district
     ).toLowerCase();
+
     const qOk = !q || text.includes(q.toLowerCase());
     const cityOk = !city || venue.location.city === city;
+
     return qOk && cityOk;
   }
 
@@ -33,26 +34,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     grid.innerHTML = list
       .map((v) => {
-        const types = v.fields.map((f) => `Sân ${f.type}`).join(" • ");
         return `
-        <a class="card venue-card" href="/venue-detail.html?id=${encodeURIComponent(v.id)}">
-          <img class="venue-card__img" src="${v.images[0]}" alt="${v.name}" loading="lazy" />
-          <div class="venue-card__body">
-            <div class="venue-card__top">
-              <div>
-                <h3 style="margin:0 0 4px">${v.name}</h3>
-                <div class="muted" style="font-size:0.92rem">${v.location.district}, ${v.location.city}</div>
-              </div>
-              <span class="badge badge--ok">${v.rating} ★</span>
+          <a class="card venue-card" href="./venues details.html?id=${encodeURIComponent(v.id)}">
+            <img class="venue-card__img" src="${v.images[0]}" alt="${v.name}" />
+            <div class="venue-card__body">
+              <h3 style="margin:0 0 6px">${v.name}</h3>
+              <div class="muted">${v.location.district}, ${v.location.city}</div>
+              <div style="margin-top:8px; font-weight:700">Từ ${window.formatVND(v.priceFrom)}/giờ</div>
             </div>
-
-            <div style="display:flex; justify-content:space-between; gap:10px; align-items:center">
-              <div class="price">Từ ${window.formatVND(v.priceFrom)}/giờ</div>
-              <div class="muted" style="font-size:0.9rem">${types}</div>
-            </div>
-          </div>
-        </a>
-      `;
+          </a>
+        `;
       })
       .join("");
   }
@@ -60,17 +51,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   function apply() {
     const q = qInput.value.trim();
     const city = citySelect.value;
+
     const filtered = venues.filter((v) => matches(v, q, city));
     render(filtered);
 
-    // Update URL
     const next = new URLSearchParams();
     if (q) next.set("q", q);
     if (city) next.set("city", city);
+
     history.replaceState(
       null,
       "",
-      "/venues.html" + (next.toString() ? "?" + next.toString() : ""),
+      "./venues.html" + (next.toString() ? "?" + next.toString() : ""),
     );
   }
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Đăng nhập — DatSan⚽</title>
+    <title>Đăng ký — DatSan⚽</title>
 
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/components.css" />
@@ -14,10 +14,24 @@
     <main class="section">
       <div class="container">
         <div class="card card--padded form-card">
-          <h2 class="form-title">Đăng nhập</h2>
-          <p class="form-subtitle">Đăng nhập để quản lý booking của bạn.</p>
+          <h2 class="form-title">Đăng ký tài khoản</h2>
+          <p class="form-subtitle">
+            Tạo tài khoản để đặt sân và quản lý booking.
+          </p>
 
-          <form class="form" id="loginForm">
+          <form class="form" id="registerForm">
+            <div>
+              <label class="label" for="name">Họ và tên</label>
+              <input
+                class="input"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Nguyễn Văn A"
+                required
+              />
+            </div>
+
             <div>
               <label class="label" for="email">Email</label>
               <input
@@ -37,35 +51,36 @@
                 id="password"
                 name="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="Ít nhất 6 ký tự"
                 minlength="6"
                 required
               />
-              <div class="help" id="loginMessage"></div>
             </div>
 
-            <div class="form-row">
-              <label
-                class="help"
-                style="display: flex; gap: 8px; align-items: center; margin: 0"
+            <div>
+              <label class="label" for="confirmPassword"
+                >Nhập lại mật khẩu</label
               >
-                <input type="checkbox" />
-                Ghi nhớ đăng nhập
-              </label>
-
-              <a class="help" href="#" style="justify-self: end"
-                >Quên mật khẩu?</a
-              >
+              <input
+                class="input"
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                placeholder="Nhập lại mật khẩu"
+                minlength="6"
+                required
+              />
+              <div class="help" id="registerMessage"></div>
             </div>
 
             <button class="btn btn--primary btn--full" type="submit">
-              Đăng nhập
+              Đăng ký
             </button>
 
             <div class="help" style="text-align: center">
-              Chưa có tài khoản?
-              <a href="./register.html" style="text-decoration: underline"
-                >Đăng ký</a
+              Đã có tài khoản?
+              <a href="./login.html" style="text-decoration: underline"
+                >Đăng nhập</a
               >
             </div>
           </form>
@@ -77,20 +92,28 @@
 
     <script src="/js/app.js" defer></script>
     <script src="/js/auth.js" defer></script>
-    <script src="/js/app.js" defer></script>
-    <script src="/js/auth.js" defer></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("loginForm");
-        const message = document.getElementById("loginMessage");
+        const form = document.getElementById("registerForm");
+        const message = document.getElementById("registerMessage");
 
         form.addEventListener("submit", (e) => {
           e.preventDefault();
 
+          const name = document.getElementById("name").value.trim();
           const email = document.getElementById("email").value.trim();
           const password = document.getElementById("password").value.trim();
+          const confirmPassword = document
+            .getElementById("confirmPassword")
+            .value.trim();
 
-          const result = loginUser(email, password);
+          if (password !== confirmPassword) {
+            message.textContent = "Mật khẩu nhập lại không khớp.";
+            message.style.color = "#f87171";
+            return;
+          }
+
+          const result = registerUser(name, email, password);
 
           if (!result.success) {
             message.textContent = result.message;
@@ -99,7 +122,7 @@
           }
 
           alert(result.message);
-          window.location.href = "./venues.html";
+          window.location.href = "./login.html";
         });
       });
     </script>
