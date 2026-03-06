@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chi tiết sân — DatSan⚽</title>
+
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+  <body>
+    <div id="site-navbar"></div>
+
+    <main class="section">
+      <div class="container">
+        <div class="layout">
+          <!-- LEFT: Info -->
+          <section>
+            <div class="detail__image">
+              <img id="venueImage" src="" alt="Ảnh sân" />
+            </div>
+
+            <div style="margin-top: 14px">
+              <h2 id="venueName" style="margin: 0 0 6px">...</h2>
+              <div class="muted" id="venueAddress">...</div>
+
+              <div
+                style="
+                  margin-top: 10px;
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  align-items: center;
+                "
+              >
+                <span class="badge badge--ok" id="venueRating">★</span>
+                <span class="badge" id="venueHours">Giờ mở cửa</span>
+                <span class="badge" id="venuePhone">SĐT</span>
+              </div>
+
+              <hr class="hr" />
+
+              <h3 style="margin: 0 0 8px">Tiện ích</h3>
+              <div
+                id="amenities"
+                class="muted"
+                style="display: flex; gap: 10px; flex-wrap: wrap"
+              ></div>
+            </div>
+          </section>
+
+          <!-- RIGHT: Booking -->
+          <aside class="card card--padded">
+            <h3 style="margin: 0 0 6px">Đặt sân</h3>
+            <p class="muted" style="margin: 0 0 12px">
+              Chọn sân con, ngày và giờ trống.
+            </p>
+
+            <form id="bookingForm" class="form">
+              <div>
+                <label class="label" for="fieldSelect">Chọn sân</label>
+                <select id="fieldSelect" required></select>
+              </div>
+
+              <div>
+                <label class="label" for="dateSelect">Chọn ngày</label>
+                <select id="dateSelect" required></select>
+                <div class="help">Demo có sẵn lịch cho vài ngày.</div>
+              </div>
+
+              <div>
+                <label class="label">Chọn giờ</label>
+                <div id="slotList" class="slot-list"></div>
+                <input type="hidden" id="chosenSlot" required />
+              </div>
+
+              <div class="help" id="chosenPreview">Chưa chọn giờ.</div>
+
+              <button class="btn btn--primary btn--full" type="submit">
+                Xác nhận đặt sân
+              </button>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../js/app.js" defer></script>
+    <script src="../js/pages/venue-detail.js" defer></script>
+  </body>
+</html>
