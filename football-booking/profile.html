@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hồ sơ cá nhân — DatSan⚽</title>
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body>
+    <div id="site-navbar"></div>
+
+    <main class="section">
+      <div class="container">
+        <div class="card card--padded form-card" style="max-width: 700px">
+          <h2 class="form-title">Hồ sơ cá nhân</h2>
+          <p class="form-subtitle">Cập nhật thông tin cơ bản của bạn.</p>
+
+          <div id="profileHeader" style="margin-bottom: 20px"></div>
+
+          <form class="form" id="profileForm">
+            <div class="form-row">
+              <div>
+                <label class="label" for="name">Họ và tên</label>
+                <input
+                  class="input"
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="label" for="email">Email</label>
+                <input
+                  class="input"
+                  id="email"
+                  name="email"
+                  type="email"
+                  disabled
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label class="label" for="phone">Số điện thoại</label>
+                <input
+                  class="input"
+                  id="phone"
+                  name="phone"
+                  type="text"
+                  placeholder="Ví dụ: 0901234567"
+                />
+              </div>
+
+              <div>
+                <label class="label" for="birthDate">Ngày sinh</label>
+                <input
+                  class="input"
+                  id="birthDate"
+                  name="birthDate"
+                  type="date"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="label" for="gender">Giới tính</label>
+              <select id="gender" name="gender">
+                <option value="">Chọn giới tính</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="favoriteSports"
+                >Môn thể thao yêu thích</label
+              >
+              <input
+                class="input"
+                id="favoriteSports"
+                name="favoriteSports"
+                type="text"
+                placeholder="Ví dụ: Bóng đá 7, Cầu lông"
+              />
+              <div class="help">Nhập nhiều môn, ngăn cách bằng dấu phẩy.</div>
+            </div>
+
+            <div class="help" id="profileMessage"></div>
+
+            <button class="btn btn--primary btn--full" type="submit">
+              Lưu thông tin
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/pages/profile.js" defer></script>
+  </body>
+</html>

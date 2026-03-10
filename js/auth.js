@@ -22,7 +22,6 @@ function registerUser(name, email, password) {
   const users = getUsers();
 
   const existedUser = users.find((user) => user.email === email);
-
   if (existedUser) {
     return {
       success: false,
@@ -35,6 +34,13 @@ function registerUser(name, email, password) {
     name,
     email,
     password,
+    avatar: "",
+    phone: "",
+    birthDate: "",
+    gender: "",
+    favoriteSports: [],
+    favoriteVenues: [],
+    createdAt: new Date().toISOString(),
   };
 
   users.push(newUser);
@@ -68,6 +74,25 @@ function loginUser(email, password) {
   };
 }
 
+function updateCurrentUserProfile(updatedData) {
+  const currentUser = getCurrentUser();
+  if (!currentUser) return;
+
+  const users = getUsers();
+
+  const updatedUser = {
+    ...currentUser,
+    ...updatedData,
+  };
+
+  const newUsers = users.map((user) =>
+    user.id === currentUser.id ? updatedUser : user,
+  );
+
+  saveUsers(newUsers);
+  saveCurrentUser(updatedUser);
+}
+
 function requireLogin() {
   const currentUser = getCurrentUser();
 
@@ -75,4 +100,32 @@ function requireLogin() {
     alert("Bạn cần đăng nhập trước.");
     window.location.href = "./login.html";
   }
+}
+function updateCurrentUserProfile(updatedData) {
+  const currentUser = getCurrentUser();
+  if (!currentUser) {
+    return {
+      success: false,
+      message: "Chưa có người dùng đăng nhập.",
+    };
+  }
+
+  const users = getUsers();
+
+  const updatedUser = {
+    ...currentUser,
+    ...updatedData,
+  };
+
+  const newUsers = users.map((user) =>
+    user.id === currentUser.id ? updatedUser : user,
+  );
+
+  saveUsers(newUsers);
+  saveCurrentUser(updatedUser);
+
+  return {
+    success: true,
+    message: "Cập nhật hồ sơ thành công!",
+  };
 }
