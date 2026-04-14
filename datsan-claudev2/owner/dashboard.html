@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard Chủ Sân — DatSan⚽</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body>
+    <div id="site-navbar"></div>
+
+    <main class="section">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+          <div>
+            <h2 style="margin:0 0 4px">Dashboard Chủ Sân</h2>
+            <p class="muted" style="margin:0">Tổng quan hoạt động đặt sân (demo).</p>
+          </div>
+          <a class="btn btn--primary" href="/venues.html">Xem sân →</a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid--2" style="margin-bottom:20px">
+          <div class="card card--padded grid grid--2" style="gap:20px">
+            <div class="stat-card">
+              <div class="stat-card__value" id="statTotal">—</div>
+              <div class="stat-card__label">Tổng booking</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value" style="color:var(--brand)" id="statConfirmed">—</div>
+              <div class="stat-card__label">Đã xác nhận</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value" style="color:#f87171" id="statCancelled">—</div>
+              <div class="stat-card__label">Đã hủy</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card__value" style="color:#fbbf24" id="statRevenue">—</div>
+              <div class="stat-card__label">Doanh thu</div>
+            </div>
+          </div>
+
+          <!-- Venue stats -->
+          <div class="card card--padded">
+            <h3 style="margin:0 0 12px">Thống kê theo sân</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tên sân</th>
+                    <th>Thành phố</th>
+                    <th>Rating</th>
+                    <th>Đặt</th>
+                    <th>Doanh thu</th>
+                  </tr>
+                </thead>
+                <tbody id="venueStatsTable">
+                  <tr><td colspan="5" class="muted" style="text-align:center">Đang tải...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking list -->
+        <div class="card card--padded">
+          <div class="tabs">
+            <button class="tab-btn is-active" data-tab="all">Tất cả booking</button>
+            <button class="tab-btn" data-tab="confirmed">Đã xác nhận</button>
+            <button class="tab-btn" data-tab="cancelled">Đã hủy</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã</th>
+                  <th>Khách</th>
+                  <th>Sân</th>
+                  <th>Lịch</th>
+                  <th>Giá</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody id="bookingTable">
+                <tr><td colspan="6" class="muted" style="text-align:center;padding:24px">Đang tải...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/pages/owner.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Tab switching
+        const tabBtns  = document.querySelectorAll(".tab-btn");
+        const tbody    = document.getElementById("bookingTable");
+        let allRows    = [];
+
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            tabBtns.forEach((b) => b.classList.remove("is-active"));
+            btn.classList.add("is-active");
+
+            const filter = btn.dataset.tab;
+            const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+            const filtered = filter === "all"
+              ? bookings
+              : bookings.filter((b) => b.status === filter);
+
+            if (!filtered.length) {
+              tbody.innerHTML = `<tr><td colspan="6" class="muted" style="text-align:center;padding:24px">Không có booking.</td></tr>`;
+              return;
+            }
+
+            tbody.innerHTML = filtered.slice(0, 50).map((b) => {
+              const badge = b.status === "confirmed"
+                ? `<span class="badge badge--ok">Xác nhận</span>`
+                : `<span class="badge badge--bad">Đã hủy</span>`;
+              return `<tr>
+                <td><span class="badge">${b.code}</span></td>
+                <td>${b.userName || b.userEmail || "—"}</td>
+                <td>${b.venueName}</td>
+                <td>${b.date} ${b.start}–${b.end}</td>
+                <td>${window.formatVND(b.price)}</td>
+                <td>${badge}</td>
+              </tr>`;
+            }).join("");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1793 @@
+{
+  "meta": {
+    "currency": "VND",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "slotMinutes": 60,
+    "scheduleDates": [
+      "2026-04-15",
+      "2026-04-16",
+      "2026-04-17",
+      "2026-04-18"
+    ]
+  },
+  "venues": [
+    {
+      "id": "vn01",
+      "name": "Sân Bóng Phú Mỹ 3",
+      "rating": 4.7,
+      "priceFrom": 200000,
+      "phone": "0901 234 567",
+      "location": {
+        "city": "TP.HCM",
+        "district": "Quận 7",
+        "address": "12 Nguyễn Lương Bằng"
+      },
+      "openHours": {
+        "start": "06:00",
+        "end": "23:00"
+      },
+      "amenities": [
+        "Đèn chiếu sáng",
+        "Bãi gửi xe",
+        "Nhà vệ sinh",
+        "Nước uống",
+        "Phòng thay đồ"
+      ],
+      "images": [
+        "https://picsum.photos/seed/vn01a/1200/700",
+        "https://picsum.photos/seed/vn01b/1200/700"
+      ],
+      "fields": [
+        {
+          "id": "vn01-f1",
+          "name": "Sân 5A",
+          "type": "5",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 200000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 200000,
+                "bookingCode": "BK-1201"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "blocked",
+                "price": 240000,
+                "note": "Bảo trì đèn"
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 200000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 300000,
+                "bookingCode": "BK-1202"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 240000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "booked",
+                "price": 240000,
+                "bookingCode": "BK-1203"
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 300000,
+                "bookingCode": "BK-1204"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 240000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 200000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 200000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 240000,
+                "bookingCode": "BK-1205"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 240000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 200000
+              }
+            ]
+          }
+        },
+        {
+          "id": "vn01-f2",
+          "name": "Sân 7A",
+          "type": "7",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 340000,
+                "bookingCode": "BK-2201"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 340000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 340000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 280000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 320000,
+                "bookingCode": "BK-2202"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 400000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 400000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 400000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 320000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 400000,
+                "bookingCode": "BK-2203"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 400000,
+                "bookingCode": "BK-2204"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 400000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 320000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 340000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 340000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "booked",
+                "price": 340000,
+                "bookingCode": "BK-2205"
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 280000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vn02",
+      "name": "Tân Bình Football Park",
+      "rating": 4.6,
+      "priceFrom": 190000,
+      "phone": "0909 111 222",
+      "location": {
+        "city": "TP.HCM",
+        "district": "Tân Bình",
+        "address": "90 Cộng Hòa"
+      },
+      "openHours": {
+        "start": "06:00",
+        "end": "23:00"
+      },
+      "amenities": [
+        "Đèn chiếu sáng",
+        "Bãi gửi xe",
+        "Căng-tin",
+        "Nước uống"
+      ],
+      "images": [
+        "https://picsum.photos/seed/vn02a/1200/700",
+        "https://picsum.photos/seed/vn02b/1200/700"
+      ],
+      "fields": [
+        {
+          "id": "vn02-f1",
+          "name": "Sân 5B",
+          "type": "5",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 190000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 190000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 230000,
+                "bookingCode": "BK-3201"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 190000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 230000,
+                "bookingCode": "BK-3202"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 230000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 290000,
+                "bookingCode": "BK-3203"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "booked",
+                "price": 230000,
+                "bookingCode": "BK-3204"
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 190000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 190000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 230000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 190000
+              }
+            ]
+          }
+        },
+        {
+          "id": "vn02-f2",
+          "name": "Sân 7B",
+          "type": "7",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 270000,
+                "bookingCode": "BK-4201"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 330000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 330000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 330000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 270000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 390000,
+                "bookingCode": "BK-4202"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 390000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 390000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 310000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 310000,
+                "bookingCode": "BK-4203"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 390000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 390000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "booked",
+                "price": 390000,
+                "bookingCode": "BK-4204"
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 310000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 330000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 330000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 330000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 270000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vn03",
+      "name": "Mỹ Đình Mini Stadium",
+      "rating": 4.8,
+      "priceFrom": 320000,
+      "phone": "0966 333 999",
+      "location": {
+        "city": "Hà Nội",
+        "district": "Nam Từ Liêm",
+        "address": "Khu Mỹ Đình, gần SVĐ"
+      },
+      "openHours": {
+        "start": "06:00",
+        "end": "23:00"
+      },
+      "amenities": [
+        "Đèn chiếu sáng",
+        "Bãi gửi xe",
+        "Phòng thay đồ",
+        "Nước uống"
+      ],
+      "images": [
+        "https://picsum.photos/seed/vn03a/1200/700",
+        "https://picsum.photos/seed/vn03b/1200/700"
+      ],
+      "fields": [
+        {
+          "id": "vn03-f1",
+          "name": "Sân 7C",
+          "type": "7",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 420000,
+                "bookingCode": "BK-5201"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 420000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 420000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 320000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 360000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 360000,
+                "bookingCode": "BK-5202"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 480000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 480000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 480000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 360000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 360000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 360000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 480000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 480000,
+                "bookingCode": "BK-5203"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 480000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 360000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "blocked",
+                "price": 420000,
+                "note": "Giải nội bộ"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 420000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 420000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 320000
+              }
+            ]
+          }
+        },
+        {
+          "id": "vn03-f2",
+          "name": "Sân 11A",
+          "type": "11",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 650000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 650000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 850000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 850000,
+                "bookingCode": "BK-6201"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 850000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 650000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 750000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 750000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 950000,
+                "bookingCode": "BK-6202"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 950000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 950000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 750000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 750000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 750000,
+                "bookingCode": "BK-6203"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 950000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 950000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 950000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 750000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 650000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 650000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 850000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 850000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 850000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 650000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vn04",
+      "name": "Cầu Giấy Arena",
+      "rating": 4.5,
+      "priceFrom": 180000,
+      "phone": "0988 222 111",
+      "location": {
+        "city": "Hà Nội",
+        "district": "Cầu Giấy",
+        "address": "35 Trần Thái Tông"
+      },
+      "openHours": {
+        "start": "06:00",
+        "end": "23:00"
+      },
+      "amenities": [
+        "Đèn chiếu sáng",
+        "Bãi gửi xe",
+        "Nước uống"
+      ],
+      "images": [
+        "https://picsum.photos/seed/vn04a/1200/700",
+        "https://picsum.photos/seed/vn04b/1200/700"
+      ],
+      "fields": [
+        {
+          "id": "vn04-f1",
+          "name": "Sân 5C",
+          "type": "5",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 180000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 180000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "booked",
+                "price": 220000,
+                "bookingCode": "BK-7201"
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 180000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "booked",
+                "price": 220000,
+                "bookingCode": "BK-7202"
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 220000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 280000,
+                "bookingCode": "BK-7203"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 280000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 220000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 180000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 180000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 220000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 180000
+              }
+            ]
+          }
+        },
+        {
+          "id": "vn04-f2",
+          "name": "Sân 7D",
+          "type": "7",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 260000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 260000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 320000,
+                "bookingCode": "BK-8201"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 260000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 380000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 380000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "booked",
+                "price": 380000,
+                "bookingCode": "BK-8202"
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 300000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 300000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 300000,
+                "bookingCode": "BK-8203"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 380000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 380000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 380000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 300000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 260000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 260000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 320000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 260000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "vn05",
+      "name": "Đà Nẵng Riverside Pitch",
+      "rating": 4.6,
+      "priceFrom": 170000,
+      "phone": "0935 777 888",
+      "location": {
+        "city": "Đà Nẵng",
+        "district": "Hải Châu",
+        "address": "15 Bạch Đằng"
+      },
+      "openHours": {
+        "start": "06:00",
+        "end": "23:00"
+      },
+      "amenities": [
+        "Đèn chiếu sáng",
+        "Bãi gửi xe",
+        "Nước uống",
+        "Khu nghỉ"
+      ],
+      "images": [
+        "https://picsum.photos/seed/vn05a/1200/700",
+        "https://picsum.photos/seed/vn05b/1200/700"
+      ],
+      "fields": [
+        {
+          "id": "vn05-f1",
+          "name": "Sân 5D",
+          "type": "5",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 170000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 170000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 210000,
+                "bookingCode": "BK-9201"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 170000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 270000,
+                "bookingCode": "BK-9202"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 210000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 210000,
+                "bookingCode": "BK-9203"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 270000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 210000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 170000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 170000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 210000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 170000
+              }
+            ]
+          }
+        },
+        {
+          "id": "vn05-f2",
+          "name": "Sân 7E",
+          "type": "7",
+          "surface": "Cỏ nhân tạo",
+          "slotsByDate": {
+            "2026-04-15": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 250000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 250000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "booked",
+                "price": 310000,
+                "bookingCode": "BK-9301"
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 250000
+              }
+            ],
+            "2026-04-16": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "booked",
+                "price": 370000,
+                "bookingCode": "BK-9302"
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 370000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 370000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 290000
+              }
+            ],
+            "2026-04-17": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 290000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "booked",
+                "price": 290000,
+                "bookingCode": "BK-9303"
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 370000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 370000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 370000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 290000
+              }
+            ],
+            "2026-04-18": [
+              {
+                "start": "17:00",
+                "end": "18:00",
+                "status": "available",
+                "price": 250000
+              },
+              {
+                "start": "18:00",
+                "end": "19:00",
+                "status": "available",
+                "price": 250000
+              },
+              {
+                "start": "19:00",
+                "end": "20:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "20:00",
+                "end": "21:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "21:00",
+                "end": "22:00",
+                "status": "available",
+                "price": 310000
+              },
+              {
+                "start": "22:00",
+                "end": "23:00",
+                "status": "available",
+                "price": 250000
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DatSan⚽ — Đặt sân bóng online</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body>
+    <div id="site-navbar"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__inner">
+          <div>
+            <h1>Đặt sân bóng nhanh,<br />xem lịch trống theo giờ</h1>
+            <p>Chọn sân • Chọn giờ • Xác nhận trong vài giây.</p>
+
+            <form class="searchbar" action="/venues.html" method="get">
+              <input
+                class="input"
+                name="q"
+                placeholder="Tìm theo tên sân / quận / thành phố..."
+              />
+              <button class="btn btn--primary" type="submit">🔍 Tìm sân</button>
+            </form>
+
+            <p class="help" style="margin-top: 10px">
+              Gợi ý: thử gõ "Mỹ Đình", "Tân Bình", "Đà Nẵng"...
+            </p>
+          </div>
+
+          <div class="card card--padded">
+            <div class="badge badge--ok">MVP Demo</div>
+            <h3 style="margin: 10px 0 6px">Có gì trong demo?</h3>
+            <ul class="muted" style="margin: 0; padding-left: 18px; line-height: 2">
+              <li>5 sân thực tế ở HCM, Hà Nội, Đà Nẵng</li>
+              <li>Tìm kiếm + lọc theo thành phố</li>
+              <li>Chi tiết sân + lịch slot trống</li>
+              <li>Đặt sân (lưu LocalStorage)</li>
+              <li>Quản lý booking + hủy</li>
+              <li>Đăng ký / Đăng nhập / Hồ sơ</li>
+            </ul>
+
+            <hr class="hr" />
+            <a class="btn btn--primary btn--full" href="/venues.html">Xem danh sách sân →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section__title">Tính năng cốt lõi</h2>
+          <div class="grid grid--3">
+            <div class="card card--padded">
+              <div style="font-size:1.8rem;margin-bottom:10px">📅</div>
+              <h3 style="margin: 0 0 6px">Lịch trống theo ngày</h3>
+              <p class="muted" style="margin: 0">
+                Hiển thị slot trống / đã đặt / khóa giờ theo màu rõ ràng.
+              </p>
+            </div>
+            <div class="card card--padded">
+              <div style="font-size:1.8rem;margin-bottom:10px">⚡</div>
+              <h3 style="margin: 0 0 6px">Đặt sân đơn giản</h3>
+              <p class="muted" style="margin: 0">
+                Chọn sân con → chọn ngày → chọn giờ → xác nhận ngay.
+              </p>
+            </div>
+            <div class="card card--padded">
+              <div style="font-size:1.8rem;margin-bottom:10px">📋</div>
+              <h3 style="margin: 0 0 6px">Quản lý booking</h3>
+              <p class="muted" style="margin: 0">
+                Xem danh sách, trạng thái và hủy booking dễ dàng.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section__title">Sân nổi bật</h2>
+          <div id="featuredVenues" class="grid grid--3">
+            <div class="card card--padded muted" style="grid-column:1/-1;text-align:center;padding:32px">
+              Đang tải...
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:20px">
+            <a class="btn btn--ghost" href="/venues.html">Xem tất cả sân →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/app.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const data = await fetch("/data/venues.json").then((r) => r.json());
+          const venues = (data.venues || []).slice(0, 3);
+          const el = document.getElementById("featuredVenues");
+          if (!venues.length) { el.innerHTML = ""; return; }
+          el.innerHTML = venues.map((v) => `
+            <a class="card venue-card" href="/venues_details.html?id=${encodeURIComponent(v.id)}">
+              <img class="venue-card__img" src="${v.images[0]}" alt="${v.name}" loading="lazy" />
+              <div class="venue-card__body">
+                <div class="venue-card__top">
+                  <h3 style="margin:0">${v.name}</h3>
+                  <span class="badge badge--ok">${v.rating}★</span>
+                </div>
+                <div class="muted" style="font-size:0.88rem">📍 ${v.location.district}, ${v.location.city}</div>
+                <div class="price" style="margin-top:6px">Từ ${new Intl.NumberFormat("vi-VN").format(v.priceFrom)}đ/giờ</div>
+              </div>
+            </a>`).join("");
+        } catch {}
+      });
+    </script>
+  </body>
+</html>

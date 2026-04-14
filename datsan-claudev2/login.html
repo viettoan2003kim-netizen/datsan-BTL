@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Đăng nhập / Đăng ký — DatSan⚽</title>
+  </head>
+  <body>
+
+    <!-- Back to home -->
+    <a href="/index.html" class="back-home">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>DatSan⚽</span>
+    </a>
+
+    <div class="container" id="container">
+
+      <!-- SIGN UP FORM -->
+      <div class="form-container sign-up">
+        <form id="registerForm">
+          <h1>Tạo tài khoản</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <span>hoặc dùng email của bạn</span>
+
+          <div class="input-wrap">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="reg-name" placeholder="Họ và tên" required />
+          </div>
+          <div class="input-wrap">
+            <i class="fa-solid fa-envelope input-icon"></i>
+            <input type="email" id="reg-email" placeholder="Email" required />
+          </div>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="reg-password" placeholder="Mật khẩu (ít nhất 6 ký tự)" minlength="6" required />
+          </div>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="reg-confirm" placeholder="Nhập lại mật khẩu" minlength="6" required />
+          </div>
+
+          <div class="msg" id="reg-msg"></div>
+          <button type="submit" id="reg-btn">Đăng ký</button>
+        </form>
+      </div>
+
+      <!-- SIGN IN FORM -->
+      <div class="form-container sign-in">
+        <form id="loginForm">
+          <h1>Đăng nhập</h1>
+          <div class="social-icons">
+            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <span>hoặc dùng email và mật khẩu</span>
+
+          <div class="input-wrap">
+            <i class="fa-solid fa-envelope input-icon"></i>
+            <input type="email" id="login-email" placeholder="Email" autocomplete="email" required />
+          </div>
+          <div class="input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="login-password" placeholder="Mật khẩu" autocomplete="current-password" required />
+          </div>
+
+          <a href="#">Quên mật khẩu?</a>
+          <div class="msg" id="login-msg"></div>
+          <button type="submit" id="login-btn">Đăng nhập</button>
+        </form>
+      </div>
+
+      <!-- TOGGLE PANEL -->
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <div class="toggle-icon">⚽</div>
+            <h1>Chào mừng trở lại!</h1>
+            <p>Nhập thông tin cá nhân để sử dụng đầy đủ tính năng của DatSan</p>
+            <button class="hidden" id="login-toggle">Đăng nhập</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <div class="toggle-icon">🏟️</div>
+            <h1>Xin chào, bạn ơi!</h1>
+            <p>Đăng ký tài khoản để đặt sân và quản lý lịch thi đấu của bạn</p>
+            <button class="hidden" id="register-toggle">Đăng ký</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-wrap" id="toastWrap"></div>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (getCurrentUser()) {
+          window.location.href = "/venues.html";
+          return;
+        }
+
+        const container   = document.getElementById("container");
+        const regToggle   = document.getElementById("register-toggle");
+        const loginToggle = document.getElementById("login-toggle");
+
+        regToggle.addEventListener("click",   () => container.classList.add("active"));
+        loginToggle.addEventListener("click", () => container.classList.remove("active"));
+
+        // Check URL param to open register tab directly
+        if (new URLSearchParams(window.location.search).get("tab") === "register") {
+          container.classList.add("active");
+        }
+
+        // ---- Mini toast (standalone, no dependency on app.js toast) ----
+        function toast(msg, type) {
+          const wrap = document.getElementById("toastWrap");
+          const el   = document.createElement("div");
+          el.className = "t-toast t-toast--" + type;
+          el.textContent = msg;
+          wrap.appendChild(el);
+          setTimeout(() => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(8px)";
+            setTimeout(() => el.remove(), 300);
+          }, 3000);
+        }
+
+        // ---- Register ----
+        document.getElementById("registerForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const msgEl = document.getElementById("reg-msg");
+          const btn   = document.getElementById("reg-btn");
+          const name     = document.getElementById("reg-name").value.trim();
+          const email    = document.getElementById("reg-email").value.trim();
+          const password = document.getElementById("reg-password").value;
+          const confirm  = document.getElementById("reg-confirm").value;
+
+          msgEl.textContent = "";
+          msgEl.className   = "msg";
+
+          if (password !== confirm) {
+            msgEl.textContent = "⚠ Mật khẩu nhập lại không khớp.";
+            msgEl.className   = "msg msg--err";
+            return;
+          }
+
+          btn.disabled    = true;
+          btn.textContent = "Đang xử lý...";
+          const result    = registerUser(name, email, password);
+
+          if (!result.success) {
+            msgEl.textContent = result.message;
+            msgEl.className   = "msg msg--err";
+            btn.disabled      = false;
+            btn.textContent   = "Đăng ký";
+            return;
+          }
+
+          toast("Đăng ký thành công! Hãy đăng nhập.", "ok");
+          setTimeout(() => {
+            container.classList.remove("active");
+            btn.disabled    = false;
+            btn.textContent = "Đăng ký";
+          }, 1200);
+        });
+
+        // ---- Login ----
+        document.getElementById("loginForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const msgEl    = document.getElementById("login-msg");
+          const btn      = document.getElementById("login-btn");
+          const email    = document.getElementById("login-email").value.trim();
+          const password = document.getElementById("login-password").value;
+
+          msgEl.textContent = "";
+          msgEl.className   = "msg";
+          btn.disabled      = true;
+          btn.textContent   = "Đang đăng nhập...";
+
+          const result = loginUser(email, password);
+
+          if (!result.success) {
+            msgEl.textContent = result.message;
+            msgEl.className   = "msg msg--err";
+            btn.disabled      = false;
+            btn.textContent   = "Đăng nhập";
+            return;
+          }
+
+          toast("Đăng nhập thành công! 🎉", "ok");
+          const redirect = new URLSearchParams(window.location.search).get("redirect") || "/venues.html";
+          setTimeout(() => { window.location.href = redirect; }, 900);
+        });
+      });
+    </script>
+  </body>
+</html>

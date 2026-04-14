@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng ký — DatSan⚽</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body>
+    <div id="site-navbar"></div>
+
+    <main class="section">
+      <div class="container">
+        <div class="card card--padded form-card">
+          <h2 class="form-title">Đăng ký tài khoản</h2>
+          <p class="form-subtitle">Tạo tài khoản để đặt sân và quản lý booking.</p>
+
+          <form class="form" id="registerForm">
+            <div>
+              <label class="label" for="name">Họ và tên</label>
+              <input
+                class="input"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Nguyễn Văn A"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="label" for="email">Email</label>
+              <input
+                class="input"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="label" for="password">Mật khẩu</label>
+              <input
+                class="input"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Ít nhất 6 ký tự"
+                minlength="6"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="label" for="confirmPassword">Nhập lại mật khẩu</label>
+              <input
+                class="input"
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                placeholder="Nhập lại mật khẩu"
+                minlength="6"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <div class="help" id="registerMessage" style="min-height:18px"></div>
+
+            <button class="btn btn--primary btn--full" type="submit" id="submitBtn">
+              Đăng ký
+            </button>
+
+            <div class="help" style="text-align:center">
+              Đã có tài khoản?
+              <a href="/login.html" style="text-decoration:underline">Đăng nhập</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Redirect if already logged in
+        if (getCurrentUser()) {
+          window.location.href = "/venues.html";
+          return;
+        }
+
+        const form    = document.getElementById("registerForm");
+        const message = document.getElementById("registerMessage");
+        const btn     = document.getElementById("submitBtn");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const name            = document.getElementById("name").value.trim();
+          const email           = document.getElementById("email").value.trim();
+          const password        = document.getElementById("password").value;
+          const confirmPassword = document.getElementById("confirmPassword").value;
+
+          if (password !== confirmPassword) {
+            message.textContent = "⚠️ Mật khẩu nhập lại không khớp.";
+            message.style.color = "#f87171";
+            return;
+          }
+
+          btn.disabled = true;
+          btn.textContent = "Đang đăng ký...";
+
+          const result = registerUser(name, email, password);
+
+          if (!result.success) {
+            message.textContent = result.message;
+            message.style.color = "#f87171";
+            btn.disabled = false;
+            btn.textContent = "Đăng ký";
+            return;
+          }
+
+          showToast(result.message, "ok");
+          setTimeout(() => { window.location.href = "/login.html"; }, 900);
+        });
+      });
+    </script>
+  </body>
+</html>

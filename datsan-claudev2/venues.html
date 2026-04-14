@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Danh sách sân — DatSan⚽</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body>
+    <div id="site-navbar"></div>
+
+    <main class="section">
+      <div class="container">
+        <h2 class="section__title">Danh sách sân</h2>
+
+        <div class="card card--padded" style="margin-bottom: 16px">
+          <form class="searchbar" id="filterForm">
+            <input
+              class="input"
+              id="q"
+              name="q"
+              placeholder="Tìm theo tên sân / quận / thành phố..."
+            />
+            <select id="city" name="city">
+              <option value="">Tất cả thành phố</option>
+              <option value="TP.HCM">TP.HCM</option>
+              <option value="Hà Nội">Hà Nội</option>
+              <option value="Đà Nẵng">Đà Nẵng</option>
+            </select>
+            <button class="btn btn--primary" type="submit">Lọc</button>
+          </form>
+        </div>
+
+        <div id="venueGrid" class="grid grid--3">
+          <div class="card card--padded muted" style="grid-column:1/-1;text-align:center;padding:32px">
+            Đang tải danh sách sân...
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/app.js" defer></script>
+    <script src="/js/pages/venues.js" defer></script>
+  </body>
+</html>
